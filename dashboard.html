@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SentimentAI</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SentimentAI</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="feedback.html">Submit Feedback</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <div style="margin-bottom: 3rem;">
+            <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Analytics Overview</h2>
+            <p style="color: #64748b;">A real-time look at customer sentiment across all submissions.</p>
+        </div>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Submissions</h3>
+                <p id="total-feedbacks">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Average Rating</h3>
+                <p id="average-rating">0.0 ⭐</p>
+            </div>
+            <div class="stat-card">
+                <h3>Most Frequent Category</h3>
+                <p id="most-frequent-category">N/A</p>
+            </div>
+        </section>
+
+        <section class="stats-grid" style="margin-top: 2rem;">
+            <div class="stat-card">
+                <h3>Sentiment Distribution</h3>
+                <div style="max-width: 200px; margin: 0 auto;">
+                    <canvas id="sentiment-chart"></canvas>
+                </div>
+            </div>
+            <div class="stat-card" style="grid-column: span 2;">
+                <h3>Average Rating by Category</h3>
+                <canvas id="category-rating-chart"></canvas>
+            </div>
+        </section>
+
+        <section id="feedback-list">
+            <div class="filters">
+                <select id="category-filter">
+                    <option value="all">All Categories</option>
+                    <option value="Product">Product</option>
+                    <option value="Service">Service</option>
+                    <option value="Website">Website</option>
+                    <option value="Other">Other</option>
+                </select>
+                <select id="sentiment-filter">
+                    <option value="all">All Sentiments</option>
+                    <option value="Positive">Positive</option>
+                    <option value="Negative">Negative</option>
+                    <option value="Neutral">Neutral</option>
+                </select>
+            </div>
+            <h2 style="font-family: 'Poppins'; font-size: 1.5rem; margin-bottom: 1.5rem;">Recent Feedback</h2>
+            <div id="feedbacks-container"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 SentimentAI - Customer Feedback Analysis Platform</p>
+    </footer>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Feedback | SentimentAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>SentimentAI</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="feedback.html">Submit Feedback</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="font-family: 'Poppins'; font-size: 2.5rem;">Tell us what you think</h2>
+            <p style="color: #64748b;">Submit your thoughts and watch our AI analyze them in real-time.</p>
+        </div>
+
+        <div class="form-card">
+            <form id="feedback-form">
+                <label for="feedback-name" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Name</label>
+                <input type="text" id="feedback-name" placeholder="your name">
+
+                <label for="feedback-category" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Category</label>
+                <select id="feedback-category">
+                    <option value="Product">Product</option>
+                    <option value="Service">Service</option>
+                    <option value="Website">Website</option>
+                    <option value="Other" selected>Other</option>
+                </select>
+
+                <label for="feedback-rating" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Rating (1-5)</label>
+                <input type="number" id="feedback-rating" min="1" max="5" value="5">
+
+                <label for="feedback-text" style="display: block; font-weight: 600; margin-bottom: 0.5rem;">Your Feedback</label>
+                <textarea id="feedback-text" placeholder="I really enjoyed using this service, but I think the interface could be a bit more intuitive..." required></textarea>
+                
+                <button type="submit">Analyze Sentiment</button>
+            </form>
+            
+            <div style="text-align: center;">
+                <div id="loader" class="loader" style="display: none;"></div>
+            </div>
+
+            <div id="result-container" style="display:none;">
+                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 0.5rem;">AI ANALYSIS COMPLETE</p>
+                <p id="sentiment-result"></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 SentimentAI - Customer Feedback Analysis Platform</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
